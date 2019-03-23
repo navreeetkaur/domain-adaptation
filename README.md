@@ -23,8 +23,8 @@ Link for pre-trained embeddings: ```https://drive.google.com/file/d/0B7XkCwpI5KD
 #### Instructions:
 For downloading the trained model: ```sh compile.sh```
 
-For training: ```sh train.sh input_data_folder_path model_path pretrained_embeddings_path evaluation_txt_file_path evaluation_txt_td_file_path```
+For training: ```sh train.sh <input_data_folder_path> <model_path> <pretrained_embeddings_path> <evaluation_txt_file_path>  <evaluation_txt_td_file_path>```
 
-For testing: ```sh test.sh eval_data.txt eval_data.txt.td model_path pretrained_embeddings_path```
+For testing: ```sh test.sh eval_data.txt eval_data.txt.td <model_path> <pretrained_embeddings_path>```
 
 This produces a file ```output.txt``` where each line contains the output for every data point in eval_data.txt. (Hence, it is line-aligned with eval_data.txt and eval_data.txt.td). Every line contains a space-separated list of ranks for each word mentioned in eval_data.txt.td (in the same order). The word with the highest probability (according to your model) is assigned a rank of 1.
