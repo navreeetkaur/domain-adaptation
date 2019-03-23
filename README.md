@@ -15,8 +15,7 @@ All the data for required for this assignment is available in the following gith
 
 ##### Input Files
 1. ```eval_data.txt```: Every line contains a data-point which is a sentence with the masked word replaced with the following token: <<target>> , and the actual token is provided at the end of the line. In the dev file, The ground truth word is separated from the rest by a special delimiter ‘::::’ (4 colons). The test_data file will have the same format but the actual word will be replaced by ‘dummy’.
-  
-2.```eval_data.txt.td```: This file is line-aligned with the previous file. Every line contains a space-separated list of words, which form the target dictionary for each of the data-points in the previous file. Only one of the words is the correct answer but this set of words needs to be ranked and written in an output file with the respective ranks.
+ 2.```eval_data.txt.td```: This file is line-aligned with the previous file. Every line contains a space-separated list of words, which form the target dictionary for each of the data-points in the previous file. Only one of the words is the correct answer but this set of words needs to be ranked and written in an output file with the respective ranks.
 
 Link for pre-trained embeddings: ```https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit```
 
@@ -25,11 +24,4 @@ For downloading the trained model: ```sh compile.sh```
 For training: ```sh train.sh input_data_folder_path model_path pretrained_embeddings_path evaluation_txt_file_path evaluation_txt_td_file_path```
 For testing: ```sh test.sh eval_data.txt eval_data.txt.td model_path pretrained_embeddings_path```
 
-#### Files:
-##### Training Files
-1.```train.py```: 
-2.```test.py```:
-3.```util.py```:
-##### Output Files
-```output.txt```: ```sh test.sh ...``` produces a file where each line contains the output for every data point in eval_data.txt. (Hence, it is line-aligned with eval_data.txt and eval_data.txt.td). Every line contains a space-separated list of ranks for each word mentioned in eval_data.txt.td (in the same order). The word with the highest probability (according to your model) is assigned a rank of 1.
-
+This produces a file ```output.txt``` where each line contains the output for every data point in eval_data.txt. (Hence, it is line-aligned with eval_data.txt and eval_data.txt.td). Every line contains a space-separated list of ranks for each word mentioned in eval_data.txt.td (in the same order). The word with the highest probability (according to your model) is assigned a rank of 1.
